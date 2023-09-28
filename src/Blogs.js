@@ -1,29 +1,35 @@
-import React from 'react'
-import "./About.css";
-import AboutBackgroundImage from './AboutBackground (1).png';
+import React from 'react';
+import BlogCard from './BlogCard'; // Assuming the BlogCard component is in the same directory
+import orange from './orange.jpg'; // Assuming you have image files for each blog
+import green from './green.jpg';   // Assuming you have image files for each blog
+import './Blogs.css';
 
 const Blogs = () => {
+  const blogsData = [
+    {
+      title: 'Blog Title 1',
+      content: 'Lorem ipsum dolor sit amet consectetur...',
+      image: orange,
+    },
+    {
+      title: 'Blog Title 2',
+      content: 'Lorem ipsum dolor sit amet consectetur...',
+      image: green,
+    },
+  ];
+
   return (
-    <div className="about-section-container">
-      <div className="about-background-image-container">
-      <img src={AboutBackgroundImage} alt= "" className="about-background-image" />
-      </div>
-      <div className="about-section-image-container">
-      </div>
-      <div className="about-section-text-container">
-        <h1 className="primary-heading">
-          Food Is Blogs
-        </h1>
-        <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
-        </p>
-        <p className="primary-text">
-          Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-          facilisis at fringilla quam.
-        </p>
-        <div className="about-buttons-container">
-        </div>
+    <div className="blogs-section-container">
+      <h1 className="primary-heading">Blogs</h1>
+      <div className="blogs-container">
+        {blogsData.map((blog, index) => (
+          <BlogCard
+            key={index}
+            title={blog.title}
+            content={blog.content}
+            image={blog.image}
+          />
+        ))}
       </div>
     </div>
   );

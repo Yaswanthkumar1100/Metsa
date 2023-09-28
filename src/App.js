@@ -8,7 +8,7 @@ import Blogs from './Blogs';
 import Initiatives from './Initiatives';
 import NavBarHead from './NavBarHead';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Slider from './Slider';
+import Footer from './Footer';
 
 
 
@@ -24,11 +24,20 @@ function App() {
   return (
     <Router>
       <NavBarHead onNavigate={handleNavigateTo} />
-      <Parallax pages={5} ref={parallaxRef}>
-        <ParallaxLayer offset={0} speed={1}>
+      <Parallax pages={6} ref={parallaxRef}>
+        <ParallaxLayer offset={0} speed={1} factor={2} style={{
+            backgroundSize: 'cover'
+          }}>
           <Home />
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={1}>
+        <ParallaxLayer 
+          offset={1} 
+          speed={1} factor={2}
+          style={{
+            backgroundSize: 'cover'
+          }}
+          
+        >
           <About />
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1}>
@@ -37,8 +46,11 @@ function App() {
         <ParallaxLayer offset={3} speed={1}>
           <Blogs />
         </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={1}>
+        <ParallaxLayer offset={4} speed={1} factor={1}>
           <Initiatives />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5} speed={1} factor={1}>
+          <Footer />
         </ParallaxLayer>
       </Parallax>
     </Router>
