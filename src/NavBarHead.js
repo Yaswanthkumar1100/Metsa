@@ -7,16 +7,13 @@ import Slider from './Slider';
 
 export default function NavBarHead({ onNavigate }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [value, setValue] = useState(0);
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
   };
   const handleDrawerClose = () => {
     setDrawerOpen(false);
   };
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+
 
   return (
     <AppBar className='appbar' style={{ backgroundColor: 'rgb(144, 203, 74)'}} >
