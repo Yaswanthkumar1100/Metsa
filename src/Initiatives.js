@@ -4,7 +4,6 @@ import './About.css';
 const Initiatives = () => {
   return (
     <div className="about-section-container">
-      {/* Existing content for Initiatives */}
       <div className="about-background-image-container"></div>
       <div className="about-section-image-container"></div>
       <div className="about-section-text-container">

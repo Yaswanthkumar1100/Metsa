@@ -21,7 +21,6 @@ const About = () => {
           Our mission is to promote sustainability, protect endangered species, and educate communities on the importance of environmental stewardship.
         </p>
         <div className="about-buttons-container">
-          {/* Add any buttons or links related to the About page */}
         </div>
       </div>
     </div>

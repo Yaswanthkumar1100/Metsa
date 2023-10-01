@@ -1,7 +1,7 @@
 import React from 'react';
-import BlogCard from './BlogCard'; // Assuming the BlogCard component is in the same directory
-import orange from './orange.jpg'; // Assuming you have image files for each blog
-import green from './green.jpg';   // Assuming you have image files for each blog
+import BlogCard from './BlogCard';
+import orange from './orange.jpg';
+import green from './green.jpg';
 import './Blogs.css';
 
 const Blogs = () => {
