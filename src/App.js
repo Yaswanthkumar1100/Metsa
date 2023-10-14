@@ -11,19 +11,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './Footer';
 
 
-
 function App() {
   const parallaxRef = React.useRef(null);
 
   const handleNavigateTo = (offset) => {
     if (parallaxRef.current) {
       parallaxRef.current.scrollTo(offset);
+    } else {
+      console.log('Parallax not linked');
     }
   };
 
   return (
     <Router>
-      <NavBarHead onNavigate={handleNavigateTo} />
+      <NavBarHead onNavigate={handleNavigateTo} parallaxRef={parallaxRef}/>
       <Parallax pages={6} ref={parallaxRef}>
         <ParallaxLayer offset={0} speed={1} factor={2} style={{
             backgroundSize: 'cover'

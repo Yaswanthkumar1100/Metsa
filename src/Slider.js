@@ -10,11 +10,14 @@ const PAGES = ["Home", "About", "Contact", "Blogs", "Initiatives"];
 const icons = [HomeIcon, InfoIcon, EmailIcon, LibraryBooksIcon, EmojiObjectsIcon];
 const offsets = [0, 1, 2, 3, 4];
 
-const Slider = ({ open, onClose, onNavigate }) => {
+const Slider = ({ open, onClose, onNavigate, parallaxRef}) => {
   const handleItemClick = (offset) => {
-    onNavigate(offset);
+    if (parallaxRef.current) {
+      parallaxRef.current.scrollTo(offset);
+    }
     onClose();
   };
+  
 
   return (
     <Drawer open={open} onClose={onClose}>

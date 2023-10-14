@@ -5,7 +5,7 @@ import './NavBarHead.css';
 import Slider from './Slider';
 
 
-export default function NavBarHead({ onNavigate }) {
+export default function NavBarHead({ onNavigate, parallaxRef }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -14,19 +14,18 @@ export default function NavBarHead({ onNavigate }) {
     setDrawerOpen(false);
   };
 
-
   return (
     <AppBar className='appbar' style={{ backgroundColor: 'rgb(144, 203, 74)'}} >
       <Toolbar>
         <IconButton onClick={handleDrawerOpen}
+
           edge="start"
           color="inherit"
-          aria-label="menu"
           sx={{ marginRight: 2 }}
         >
           <MenuIcon />
         </IconButton>
-        <Slider open={drawerOpen} onClose={handleDrawerClose} onNavigate={onNavigate}/>
+        <Slider open={drawerOpen} onClose={handleDrawerClose} onNavigate={onNavigate} parallaxRef={parallaxRef}/>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Amalgam
         </Typography>
